@@ -26,14 +26,14 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: |
-          #!bin/bash
+          #!/bin/bash
           echo "Hello"
   print-world:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - run: |
-          #!bin/bash
+          #!/bin/bash
           echo "World"
   pipeline-detail:
     docker:
@@ -42,14 +42,14 @@ jobs:
       - run: 
           name: "checking details"
           command: |
-            #!bin/bash
+            #!/bin/bash
             echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>.
   my-env:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - run: |
-          #!bin/bash
+          #!/bin/bash
           echo $MYNAME
 
 # Orchestrate jobs using workflows
