@@ -61,15 +61,17 @@ jobs:
           command: |
             echo "hello world" > output.txt
       - persist_to_workspace:
-          root: /tmp/dir
+          root: ~/
           paths:
             - output.txt
   print_output_file:
+    requires:
+      - save_hello_world_output
     docker:
       - image: circleci/node:13.8.0
     steps:
       - attach_workspace:
-          at: /tmp/dir
+          at: ~/
       - run:
           name: "retrieving-files"
           command: |
