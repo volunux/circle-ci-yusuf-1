@@ -87,6 +87,12 @@ jobs:
           name: "retrieving-files"
           command: |
             cat ~/output.txt
+            aws --version
+      - run:
+          name: "On failure due to non existing installation"
+          command: |
+            echo "AWS cannot be found or it is not installed"
+          when: on_fail
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
