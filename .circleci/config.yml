@@ -48,9 +48,10 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: |
-          #!/bin/bash
-          echo $MYNAME
+      - run: 
+          name: "bla-bla"
+          command: |
+            echo $MYNAME
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
