@@ -88,3 +88,5 @@ workflows:
             - print-hello
       - pipeline-detail
       - my-env
+      - save_hello_world_output
+      - print_output_file
