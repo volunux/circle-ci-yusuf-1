@@ -35,6 +35,15 @@ jobs:
       - run: |
           #!bin/bash
           echo "World"
+  pipeline-detail:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: 
+          name: "checking details"
+          command: |
+            #!bin/bash
+            echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>.
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
