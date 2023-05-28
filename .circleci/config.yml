@@ -50,7 +50,7 @@ jobs:
     steps:
       - run: |
           #!bin/bash
-          echo "${MYNAME}"
+          echo ${MYNAME}
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
