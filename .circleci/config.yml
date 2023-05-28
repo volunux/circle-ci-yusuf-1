@@ -6,6 +6,14 @@ orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1 
 
+commands:
+  print-pipeline-id:
+    steps:
+      - run:
+          name: printing-pipeline-ID
+          command: |
+            echo $CIRCLE_WORKFLOW_ID
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
@@ -52,6 +60,7 @@ jobs:
           name: "bla-blaa"
           command: |
             echo $MY_NAME
+      - print-pipeline-id
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
