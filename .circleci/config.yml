@@ -87,7 +87,7 @@ jobs:
           name: "retrieving-files"
           command: |
             cat ~/output.txt
-            aws --version
+            return 1
       - run:
           name: "On failure due to non existing installation"
           command: |
