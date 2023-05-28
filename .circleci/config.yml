@@ -60,16 +60,16 @@ jobs:
           name: "sharing-files"
           command: |
             echo "hello world" > output.txt
-    persist_to_workspace:
-      root: /tmp/dir
-      paths:
-        - output.txt
+      - persist_to_workspace:
+          root: /tmp/dir
+          paths:
+            - output.txt
   print_output_file:
     docker:
       - image: circleci/node:13.8.0
-    attach_workspace:
-      at: /tmp/dir
     steps:
+      - attach_workspace:
+          at: /tmp/dir
       - run:
           name: "retrieving-files"
           command: |
